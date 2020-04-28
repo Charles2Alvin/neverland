@@ -1,0 +1,2 @@
+::1 - POST /signup HTTP/1.1 400 40 - 37.720 ms
+::1 - POST /signin HTTP/1.1 200 32 - 3.391 ms
