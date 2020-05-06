@@ -13,3 +13,9 @@
 ::1 - POST /addFavorite HTTP/1.1 200 30 - 0.837 ms
 ::1 - POST /addFavorite HTTP/1.1 200 30 - 19.510 ms
 ::1 - GET /getFavorite HTTP/1.1 200 57 - 18.892 ms
+::1 - POST /signin HTTP/1.1 400 30 - 7650.470 ms
+::1 - POST /signup HTTP/1.1 200 17 - 1197.764 ms
+::1 - POST /signin HTTP/1.1 200 32 - 1411.154 ms
+::1 - GET /cool HTTP/1.1 200 21 - 2.122 ms
+::1 - GET /cool HTTP/1.1 200 21 - 0.205 ms
+::1 - GET /cool HTTP/1.1 200 21 - 0.199 ms
