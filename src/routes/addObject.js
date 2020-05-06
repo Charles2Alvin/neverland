@@ -6,7 +6,7 @@ const addObjectRouter = (req, res) => {
     List.find({email}).exec(function (err, users) {
         if (err) console.error(err);
         const newList = users[0].likes.push(objectID);
-        List.findOneAndUpdate({email}, {likes: newList}).exec(function (err, lst) {
+        List.findOneAndUpdate({email}, {likes: newList}, {upsert: true, new: true}).exec(function (err, lst) {
             console.log("New like lists for", email);
             for (let i = 0; i < newList.length; i++) {
                 console.log(newList[i] + " ");
