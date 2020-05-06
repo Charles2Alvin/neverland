@@ -7,7 +7,8 @@
 
 // 连接数据库
 const mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost/neverland', {
+const URI = 'mongodb+srv://xitao:xitaoandyijing@cluster0-hr99d.mongodb.net/test?retryWrites=true&w=majority';
+mongoose.connect(URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(r => console.log(r));
@@ -45,5 +46,8 @@ app.post('/addFavorite', addObjectRouter);
 app.get('/getFavorite', getObjectRouter);
 
 // 启动服务器
-const port = process.env.PORT || 5000;
+let port = process.env.PORT;
+if (port == null || port === "") {
+    port = 20000;
+}
 app.listen(port, () => console.log(`Listening on port ${port}`));
