@@ -1,5 +1,6 @@
-
-const indexRouter = (req, res) => {
-    res.send({ msg: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
+module.exports = {
+    LoginRouter: require('./signin'),
+    RegisterRouter: require('./signup'),
+    AddObjRouter: require('./addObject'),
+    GetObjRouter: require('./getObject'),
 };
-module.exports = indexRouter;
