@@ -33,12 +33,16 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 // 将路径匹配到对应的路由器
-const indexRouter = require('./routes/index');
+const indexRouter = require('./routes');
 const signInRouter = require('./routes/signin');
 const signUpRouter = require('./routes/signup');
+const addObjectRouter = require('./routes/addObject');
+const getObjectRouter = require('./routes/getObject');
 app.get('/', indexRouter);
 app.post('/signin', signInRouter);
 app.post('/signup', signUpRouter);
+app.post('/addFavorite', addObjectRouter);
+app.get('/getFavorite', getObjectRouter);
 
 // 启动服务器
 const port = process.env.PORT || 5000;
