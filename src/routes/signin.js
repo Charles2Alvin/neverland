@@ -2,7 +2,8 @@ const User = require('../model/user');
 const sigInRouter = (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
-    User.find().byName(email).exec(function (err, users) {
+    User.find({email}).exec(function (err, users) {
+        if (err) console.error(err);
         if (users.length === 0) {
             res.status(400).send({msg: "Email does not exist"});
         }

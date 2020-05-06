@@ -15,6 +15,7 @@ const signUpRouter = (req, res) => {
     });
     // 先验证该邮箱是否注册
     User.find().byName(email).exec(function (err, users) {
+        if (err) console.error(err);
         const registered = users.length !== 0;
         if (!registered) {
             newUser.save(function (err, user) {

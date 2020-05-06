@@ -34,6 +34,7 @@ app.get('/', (req, res) => res.send("Successful connection"));
 app.post('/signin', routes.LoginRouter);
 app.post('/signup', routes.RegisterRouter);
 app.post('/addFavorite', routes.AddObjRouter);
+app.post('/rmFavorite', routes.RmObjRouter);
 app.get('/getFavorite', routes.GetObjRouter);
 app.get('/cool', (req, res) => res.send(cool()));
 

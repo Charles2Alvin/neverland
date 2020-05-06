@@ -1,11 +1,7 @@
-const List = require('../model/likes');
-
 const getObjectRouter = (req, res) => {
     const email = req.body.email;
     console.log("In add router", email);
-    List.find({email}).exec(function (err, users) {
-        res.status.send({likes: users[0].likes});
-    });
+    res.status(200).send({status: 200, msg: "success", list: {objects: [1, 2, 3]}});
 
 };
 
