@@ -19,3 +19,6 @@
 ::1 - GET /cool HTTP/1.1 200 21 - 2.122 ms
 ::1 - GET /cool HTTP/1.1 200 21 - 0.205 ms
 ::1 - GET /cool HTTP/1.1 200 21 - 0.199 ms
+::1 - GET /cool HTTP/1.1 200 9 - 2.589 ms
+::1 - GET /favicon.ico HTTP/1.1 404 150 - 1.245 ms
+::1 - GET /cool HTTP/1.1 200 4 - 0.392 ms
