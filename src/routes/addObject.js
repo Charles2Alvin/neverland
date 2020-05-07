@@ -5,12 +5,12 @@ const addObjectRouter = (req, res) => {
     const objectID = req.body.objectID;
     List.find({email}).exec(function (err, users) {
         if (err) console.error(err);
-        const newList = users[0].likes.push(objectID);
-        List.findOneAndUpdate({email}, {likes: newList}, {upsert: true, new: true}).exec(function (err, lst) {
-            console.log("New like lists for", email);
-            for (let i = 0; i < newList.length; i++) {
-                console.log(newList[i] + " ");
-            }
+        const likes = users.length === 0 ? [objectID] : [...users[0].likes, objectID];
+        List.findOneAndUpdate({email}, {likes: likes}, {upsert: true, new: true}).exec(function (err, lst) {
+            console.log("New like lists for", email, objectID, lst);
+            // for (let i = 0; i < lst.length; i++) {
+            //     console.log(lst[i] + " ");
+            // }
             res.status(200).send({status: 200, msg: "success"});
         })
 
