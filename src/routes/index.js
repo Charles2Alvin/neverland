@@ -3,5 +3,6 @@ module.exports = {
     RegisterRouter: require('./signup'),
     AddObjRouter: require('./addObject'),
     GetObjRouter: require('./getObject'),
-    RmObjRouter: require('./rmObject')
+    RmObjRouter: require('./rmObject'),
+    RmAllObjRouter: require('/rmAllObject')
 };

@@ -31,12 +31,16 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 // 将路径匹配到对应的路由器
 const routes = require('./routes');
 app.get('/', (req, res) => res.send("Successful connection"));
+app.get('/getFavorite', routes.GetObjRouter);
+app.get('/cool', (req, res) => res.send(cool()));
+
+
 app.post('/signin', routes.LoginRouter);
 app.post('/signup', routes.RegisterRouter);
 app.post('/addFavorite', routes.AddObjRouter);
 app.post('/rmFavorite', routes.RmObjRouter);
-app.get('/getFavorite', routes.GetObjRouter);
-app.get('/cool', (req, res) => res.send(cool()));
+app.post('/rmAllFavorite', routes.RmAllObjRouter);
+
 
 
 // 启动服务器
