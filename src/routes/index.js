@@ -4,5 +4,5 @@ module.exports = {
     AddObjRouter: require('./addObject'),
     GetObjRouter: require('./getObject'),
     RmObjRouter: require('./rmObject'),
-    RmAllObjRouter: require('/rmAllObject')
+    RmAllObjRouter: require('./rmAllObject')
 };
