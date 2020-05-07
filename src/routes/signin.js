@@ -5,7 +5,7 @@ const sigInRouter = (req, res) => {
     User.find({email}).exec(function (err, users) {
         if (err) console.error(err);
         if (users.length === 0) {
-            res.status(400).send({msg: "Email does not exist"});
+            res.status(404).send({msg: "Email does not exist"});
         }
         else if (users[0].password === password) {
             res.status(200).send({status: '200', msg: "Success"});
